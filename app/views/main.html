@@ -1,0 +1,36 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="http://rvpg.me">About</a></li>
+  </ul>
+  <h3 class="text-muted">The Nth power of a value</h3>
+</div>
+
+<div class="form-group">
+  <label class="control-label">Select the power of the function</label>
+  <select class="form-control" ng-options="value for value in numbers" ng-change="setPower(power)" ng-model="power"></select>
+</div>
+<div class="container">
+<p>Move your mouse over the numbers to get the value of the calculus number^power </p>
+<div class="row numbers">
+  <div class="col-xs-6 col-md-3 number" ng-model="result" ng-mouseover="result = calculus(value)" ng-click="result = calculus(value)" ng-repeat="value in numbers">
+    <div  class="small">{{value}}</div>
+    {{ result || value }}
+  </div>
+</div>
+
+</div>
+
+
+<div class="footer">
+   <div id="paypal">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                ">
+                <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
+                <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                If you want to donate some money
+        </div>
+</div>
